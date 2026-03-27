@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "LuckyDraw";
+}
+
+
+<link href="~/css/luckydraw.css" rel="stylesheet" />
+
+<p>@ViewBag.Message</p>
+
+<input type="hidden" id="Customer_LuckyNumber" value="@Model.LuckyNumber" disabled />
+
+<div> 
+    @* <canvas id="canvas"></canvas> *@
+    <div class="container">
+
+        <div class="item" id="number_one">0</div>
+        <div class="item" id="number_two">0</div>
+        <div class="item" id="number_three">0</div>
+
+    </div>
+    <div class="container-button">
+        <button class="button" onclick="DisplayLuckyNumber();">
+            <span class="button-content">QUAY SỐ </span>
+        </button>
+    </div>
+</div>
+
+
+
+<script src="~/js/luckynumber.js"></script>
+<script src="~/js/firework.js"></script>
+

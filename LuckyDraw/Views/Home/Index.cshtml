@@ -1,0 +1,115 @@
+﻿@* @model LuckyDraw.Models.Customer; *@
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<style>
+    .form-check {
+        margin-bottom: 1rem;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row gx-3">
+        <div class="col-xxl-12">
+            <div class="card mb-3">
+                <div class="card-header ">
+                    <h5 class="m-0">ĐĂNG KÝ THÔNG TIN NHẬN THƯỞNG</h5>
+                </div>
+                <div class="card-body">
+                    <form class="row g-3 needs-validation" novalidate="" asp-action="Index" method="post">
+                        <div class="col-md-12">
+                            <label class="form-label">1. Họ và tên (Full name) <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" value="" name="FullName"
+                                   required=""
+                                   placeholder="Nhập câu trả lời của bạn">
+                            <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">2. Số điện thoại: (Phone number) <span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" value="" name="PhoneNumber"
+                                   required="" placeholder="Nhập câu trả lời của bạn">
+                            <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">3. Email của bạn (Email) <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" value="" name="Email"
+                                   required="" placeholder="Nhập câu trả lời của bạn">
+                            <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">4. Công ty của bạn (Your company) <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" value="" name="Company"
+                                   required="" placeholder="Nhập câu trả lời của bạn">
+                            <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label">5. Bạn đang muốn tìm hiểu và quan tâm giải pháp gì?/What solutions do you want to learn and are interested in? <span class="text-danger">*</span></label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="SmartWarehouseSolutions" value="true" name="SmartWarehouseSolutions">
+                                <label class="form-check-label" for="SmartWarehouseSolutions">Giải pháp quản lý kho thông minh/Smart Warehouse Solutions</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="MachineVisionSolutions" value="true" name="MachineVisionSolutions">
+                                <label class="form-check-label" for="MachineVisionSolutions">Giải pháp xử lý ảnh công nghiệp Machine Vision/Machine Vision Industrial Image Processing Solutions</label>
+                            </div>
+                            <div class="form-check ">
+                                <input type="checkbox" class="form-check-input" id="AGVnAMRSolutions" value="true" name="AGVnAMRSolutions">
+                                <label class="form-check-label" for="AGVnAMRSolutions">Giải pháp AGV/AMR/ AGV/AMR Solutions</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="AutomaticMachineManufacturingSolutions" value="true" name="AutomaticMachineManufacturingSolutions">
+                                <label class="form-check-label" for="AutomaticMachineManufacturingSolutions">Giải pháp chế tạo máy tự động/ Automatic Machine Manufacturing Solutions</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="AutomationEquipmentinProduction" value="true" name="AutomationEquipmentinProduction">
+                                <label class="form-check-label" for="AutomationEquipmentinProduction">Thiết bị tự động hoá trong sản xuất/Automation Equipment in Production</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="IoTSolutions" value="true" name="IoTSolutions">
+                                <label class="form-check-label" for="IoTSolutions">IoT, OEE, SCADA, E-Factory, E-Logistics</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="OtherSolutions" value="true" name="OtherSolutions">
+                                <label class="form-check-label" for="OtherSolutions">Khác</label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label">6. Bạn biết tới sự kiện RTC Technology Việt Nam tham gia VIMF 2025 qua kênh nào?/Through which channel did you know about RTC Technology Vietnam's participation in VIMF2025? <span class="text-danger">*</span></label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="MailChannel" value="true" name="MailChannel">
+                                <label class="form-check-label" for="MailChannel">Tôi nhận được thư mời qua email/I received an invitation via email?</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="WebsiteChannel" value="true" name="WebsiteChannel">
+                                <label class="form-check-label" for="WebsiteChannel">Qua kênh website / website</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="FacebookChannel" value="true" name="FacebookChannel">
+                                <label class="form-check-label" for="FacebookChannel">Facebook</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="PartnersChannel" value="true" name="PartnersChannel">
+                                <label class="form-check-label" for="PartnersChannel">Đối tác, Bạn bè giới thiệu/Partners and Friends introduced me</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="OtherChannel" value="true" name="OtherChannel">
+                                <label class="form-check-label" for="OtherChannel">Khác/Other</label>
+                            </div>
+                            <div class="invalid-feedback invalid-feedback-channel">Câu hỏi này là bắt buộc.</div>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Gửi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

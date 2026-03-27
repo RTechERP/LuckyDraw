@@ -1,0 +1,121 @@
+﻿@* @addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers *@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Row start -->
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header">
+                <button class="btn btn-outline-primary" onclick="onOpenModal();"><i class="fa-solid fa-plus"></i>Thêm quà</button>
+                <a class="btn btn-warning" asp-action="CustomerAward" asp-controller="home"><i class="fa-solid fa-award"></i> Danh sách trúng thưởng</a>
+            </div>
+            <div class="card-body">
+                <form action="javascript:GetAllPrize()" method="get">
+                    <div class="row gx-3">
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Năm</label>
+                                <input type="number" class="form-control" id="year" placeholder="" value="@DateTime.Now.Year" required />
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Số</label>
+                                <input type="number" class="form-control" id="luckynumber" placeholder="" value="" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Từ khoá</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="keyword" value="" placeholder="">
+                                    <button class="btn btn-success" type="submit">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="border border-dark rounded-3">
+                    @* <div id="tbl_data_Prize">
+                    </div> *@
+                    <table class="table table-striped table-bordered" id="tblPrize">
+                        <thead class="text-center">
+                            <tr>
+                                <th class="w-25"></th>
+                                <th class="w-25">ID</th>
+                                <th class="w-75">Tên quà</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="align-middle">
+                                <td data-label="Action" class="text-center p-0">
+                                    <button class="btn btn-info" type="button" title="Sửa">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                    <button class="btn btn-danger" type="button" title="Xoá">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </td>
+                                <td data-label="Trạng thái" class="text-center p-0">Trạng thái</td>
+                                <td data-label="Tên sản phẩm">German</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row end -->
+<!-- Modal -->
+<div class="modal fade" id="modalPrize" tabindex="-1"
+     aria-labelledby="exampleModalCenteredScrollableTitle" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-uppercase" id="exampleModalCenteredScrollableTitle">
+                    CHI TIẾT QUÀ TẶNG
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="javascript:SaveData();" class="row g-3 needs-validation" novalidate id="frmPrize">
+                    <div class="row gx-3">
+                        <input type="hidden" class="form-control Prize-ID" value="0" />
+                        <div class="col-lg-4 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label class="form-label">ID</label>
+                                <input type="number" class="form-control Prize-LuckyNumber" value="" min="1" max="999" required />
+                                <div class="invalid-feedback">Vui lòng nhập ID từ 1 đến 999</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-sm-8 col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Tên quà</label>
+                                <input type="text" class="form-control Prize-PrizeName" value="" required />
+                                <div class="invalid-feedback">Vui lòng nhập Tên quà</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
+                    Đóng
+                </button>
+                <button type="submit" class="btn btn-primary" form="frmPrize">
+                    Lưu
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/prize.js" asp-append-version="true"></script>

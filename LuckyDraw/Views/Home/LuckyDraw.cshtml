@@ -1,0 +1,102 @@
+﻿@model LuckyDraw.Models.Customer;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LuckyDraw</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/luckydraw.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/icon-logo-RTC-2023.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            /* background: url(/luckynumber/background.jpg) center; */
+            background: url(/background.jpg) center;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div class="header" style="padding:10px 0;">
+        <div class="app-brand-sm d-sm-block m-0 text-center">
+            <a href="#">
+                <img src="~/logo-RTC-ver2-red-white (2).png" class="logo" alt="RTC Technology">
+            </a>
+        </div>
+        <!-- App brand sm end -->
+        <!-- Breadcrumb start -->
+        <div class="text-center title">
+            <p>QUAY SỐ TRÚNG THƯỞNG</p>
+        </div>
+    </div>
+    <input type="hidden" id="Customer_LuckyNumber" value="@Model.LuckyNumber" disabled />
+
+    <div class="container">
+
+        <div class="item" id="number_one">0</div>
+        <div class="item" id="number_two">0</div>
+        <div class="item" id="number_three">0</div>
+    </div>
+
+    <div class="w-100 text-center text-light">
+        <div class="d-flex justify-content-center">
+            <p class="info-award-id p-0"></p>
+        </div>
+        <h4 class="info-award p-0 m-0"></h4>
+        @* <h2 class="info-award">Xin chúc mừng ABC đã trúng giải 1CBD.<br />Vui lòng đến quầy để nhận thưởng. Xin cảm ơn!</h2> *@
+
+        <img id="img_lucky" src="~/mascode-Photoroom.png" alt="chúc mừng"  class="w-100"/>
+        <img id="img_nonlucky" src="~/mascode-sad-Photoroom.png" alt="chúc mừng" class="w-100" />
+    </div>
+    @* <div class="container-number">
+        <div class="container-button">
+            <button class="button" onclick="DisplayLuckyNumber();">
+                <span class="button-content">QUAY SỐ </span>
+            </button>
+        </div>
+    </div> *@
+
+    <!-- Button trigger modal -->
+    @* <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button> *@
+
+    <!-- Modal -->
+    @* <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">XIN CHÚC MỪNG NGUYỄN VĂN A ĐÃ TRÚNG GIẢI 1 CÁI ÁO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>ID: <span>1</span></p>
+                    <p>Vui lòng lưu lại số này để có thể tham gia mini game!</p>
+                </div>
+                < div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div> *@
+</body>
+</html>
+
+<script src="~/js/luckynumber.js"></script>
+<script src="~/js/firework.js"></script>
+<script src="~/assets/js/sweetalert2@11.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

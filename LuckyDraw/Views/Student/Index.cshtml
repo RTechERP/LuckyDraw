@@ -1,0 +1,183 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .form-check {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row gx-3">
+        <div class="col-xxl-12">
+            <div class="card mb-3">
+                <div class="card-header ">
+                    <h5 class="m-0">ĐĂNG KÝ THÔNG TIN NHẬN THƯỞNG</h5>
+                </div>
+                <div class="card-body">
+                    <form class="row g-3 needs-validation" novalidate="" asp-action="Index" method="post">
+                        <div class="col-md-12">
+                            <label class="form-label">1. Họ và tên <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" value="" name="FullName"
+                                   required=""
+                                   placeholder="Nhập câu trả lời của bạn">
+                            <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">2. Số điện thoại <span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" value="" name="PhoneNumber"
+                                   required="" placeholder="Nhập câu trả lời của bạn">
+                            <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">3. Email của bạn <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" value="" name="Email"
+                                   required="" placeholder="Nhập câu trả lời của bạn">
+                            <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">4. Khóa học <span class="text-danger">*</span></label>
+                            @* <input type="text" class="form-control" value="" name="SchoolYear"
+                                   required="" placeholder="Nhập câu trả lời của bạn"> *@
+
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="K16" value="K16" name="SchoolYear">
+                                <label class="form-check-label" for="K16">
+                                    K16
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="K17K17" value="K17" name="SchoolYear">
+                                <label class="form-check-label" for="K17">
+                                    K17
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input type="radio" class="form-check-input" id="K18" value="K18" name="SchoolYear">
+                                <label class="form-check-label" for="K18">
+                                    K18
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="K19" value="K19" name="SchoolYear">
+                                <label class="form-check-label" for="K19">K19</label>
+                            </div>
+                            <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label">5. Ngành học <span class="text-danger">*</span></label>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="MechatronicsEngineeringTechnology" value="1" name="Major">
+                                <label class="form-check-label" for="MechatronicsEngineeringTechnology">Công nghệ kỹ thuật cơ điện tử</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="MechanicalEngineeringTechnology" value="2" name="Major">
+                                <label class="form-check-label" for="MechanicalEngineeringTechnology">
+                                    Công nghệ kỹ thuật cơ khí
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input type="radio" class="form-check-input" id="ElectronicsandTelecommunicationsEngineeringTechnology" value="3" name="Major">
+                                <label class="form-check-label" for="ElectronicsandTelecommunicationsEngineeringTechnology">
+                                    Công nghệ kỹ thuật điện tử - viễn thông
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="ElectricalandElectronicsEngineeringTechnology" value="4" name="Major">
+                                <label class="form-check-label" for="ElectricalandElectronicsEngineeringTechnology">
+                                    Công nghệ kỹ thuật điện, điện tử
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="ControlandAutomationEngineeringTechnology" value="5" name="Major">
+                                <label class="form-check-label" for="ControlandAutomationEngineeringTechnology">
+                                    Công nghệ kỹ thuật điều khiển và tự động hóa
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="ChemicalEngineeringTechnology" value="6" name="Major">
+                                <label class="form-check-label" for="ChemicalEngineeringTechnology">
+                                    Công nghệ kỹ thuật hóa học
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="ThermalEngineeringTechnology" value="7" name="Major">
+                                <label class="form-check-label" for="ThermalEngineeringTechnology">
+                                    Công nghệ kỹ thuật nhiệt
+                                </label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="AutomotiveEngineeringTechnology" value="8" name="Major">
+                                <label class="form-check-label" for="AutomotiveEngineeringTechnology">
+                                    Công nghệ kỹ thuật ô tô
+                                </label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="InformationSystems" value="9" name="Major">
+                                <label class="form-check-label" for="InformationSystems">
+                                    Hệ thống thông tin
+                                </label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="Accounting" value="10" name="Major">
+                                <label class="form-check-label" for="Accounting">
+                                    Kế toán
+                                </label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="ComputerScience" value="11" name="Major">
+                                <label class="form-check-label" for="ComputerScience">Khoa học máy tính</label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="SoftwareEngineering" value="12" name="Major">
+                                <label class="form-check-label" for="SoftwareEngineering">
+                                    Kỹ thuật phần mềm
+                                </label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="EnglishLanguage" value="13" name="Major">
+                                <label class="form-check-label" for="EnglishLanguage">
+                                    Ngôn ngữ Anh
+                                </label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="BusinessAdministration" value="14" name="Major">
+                                <label class="form-check-label" for="BusinessAdministration">
+                                    Quản trị kinh doanh
+                                </label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="FinanceandBanking" value="15" name="Major">
+                                <label class="form-check-label" for="FinanceandBanking">Tài chính - Ngân hàng</label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="OtherMajor" value="16" name="Major">
+                                <label class="form-check-label" for="OtherMajor">Khác</label>
+                                <div class="invalid-feedback">Câu hỏi này là bắt buộc.</div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">Gửi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
